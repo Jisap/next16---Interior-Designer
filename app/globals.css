@@ -1,26 +1,38 @@
 @import "tailwindcss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "remixicon/fonts/remixicon.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --prim: #B79F4F;
+  --prim-dark: #ffc400;
+  --text-color: #1D1913;
+  --text-light: #c4beb8;
+  --body: #191817;
+  --white: #fff;
+  --black: #000;
+
+  --transition-regular: .3s;
+  --transition-slow: .6s;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.Rethink {
+  font-family: var(--font-rethink);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.DmSans {
+  font-family: var(--font-dmSans);
+}
+
+.Audiowide {
+  font-family: var(--font-audiowide);
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--body);
+  color: var(--white);
+  overflow-x: hidden !important;
 }
