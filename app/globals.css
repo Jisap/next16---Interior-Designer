@@ -1,4 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+  --color-prim: var(--prim);
+  --color-prim-dark: var(--prim-dark);
+  --color-text: var(--text-color);
+  --color-text-light: var(--text-light);
+  --color-body: var(--body);
+  --color-white: var(--white);
+  --color-black: var(--black);
+}
+
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import "remixicon/fonts/remixicon.css";
 
