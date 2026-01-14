@@ -13,6 +13,7 @@
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@iconify/react": "^6.0.2",
     "bootstrap-icons": "^1.13.1",
+    "framer-motion": "^12.26.2",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-countup": "^6.5.3",
