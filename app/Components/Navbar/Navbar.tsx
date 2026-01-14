@@ -88,11 +88,39 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <Link href="#contact" className="Rethink font-semibold px-4 py-2 bg-white text-black hover:text-white rounded-full transition-all duration-300 cursor-pointer">
+          <Link href="#contact" className="Rethink font-semibold px-4 py-2 bg-white text-black hover:text-prim-dark rounded-full transition-all duration-300 cursor-pointer">
             Get in Touch
           </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden flex items-center justify-between gap-4">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-3xl focus:outline-none"
+          >
+            <i className="ri-menu-line"></i>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-black border-t border-gray-500 mt-3 transition-all duration-300">
+          <div className="flex flex-col px-[8%] py-3 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block px-2 py-2 font-medium rounded-md text-gray-100"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
