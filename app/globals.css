@@ -60,6 +60,5 @@ body {
 } */
 
 .hero-header {
-  @apply w-full h-screen bg-no-repeat bg-cover flex justify-center flex-col;
-  background-image: url(/Images/Hero-bg.jpg);
+  @apply w-full h-screen bg-no-repeat bg-cover flex justify-center flex-col relative overflow-hidden;
 }
