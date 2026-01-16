@@ -58,7 +58,3 @@ body {
   justify-content: center;
   flex-direction: column;
 } */
-
-.hero-header {
-  @apply w-full h-screen bg-no-repeat bg-cover flex justify-center flex-col relative overflow-hidden;
-}

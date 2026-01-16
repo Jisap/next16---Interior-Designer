@@ -66,7 +66,7 @@ const Hero = () => {
   return (
     <>
       <motion.div
-        className="px-[8%] lg:px-[5%] hero-header flex flex-col justify-start pt-32 md:justify-center md:pt-0"
+        className="hero-header w-full min-h-screen flex flex-col pt-45 md:pt-45 lg:justify-center lg:pt-0 px-6 sm:px-12 md:px-24 overflow-hidden relative"
         id="home"
         initial="hidden"
         animate="visible"
@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="overflow-hidden">
             <motion.h1
               variants={maskVariants}
-              className="text-5xl md:text-7xl font-semibold leading-tight"
+              className="text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight"
             >
               Strong foundations, <br /> lasting results
             </motion.h1>
@@ -98,7 +98,7 @@ const Hero = () => {
 
           <motion.p
             variants={itemVariants}
-            className="my-5 w-full lg:w-1/2 text-lg text-gray-300"
+            className="my-5 w-full lg:w-1/2 text-lg text-gray-100 [text-shadow:0_2px_8px_rgba(0,0,0,0.9),0_0_12px_rgba(0,0,0,0.7)] lg:[text-shadow:none]"
           >
             Our team crafts thoughtful, modern spaces that balance beauty, purpose, and sustainability for every client we serve.
           </motion.p>
@@ -115,13 +115,13 @@ const Hero = () => {
 
         <motion.div
           variants={boxRevealVariants}
-          className="md:absolute bottom-0 right-0 p-10 flex flex-col mt-10 md:mt-0 rounded-tl-3xl bg-black text-white shadow-2xl"
+          className="relative md:absolute bottom-0 right-0 p-8 md:p-10 flex flex-col rounded-tl-3xl bg-black text-white shadow-2xl mt-auto md:mt-0 self-end -mr-[10%] md:mr-0 w-[calc(100%+8%)] md:w-auto"
         >
           <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-5xl mb-5 font-semibold"
+            className="text-4xl md:text-5xl mb-5 font-semibold"
           >
             About our studio
           </motion.h1>
@@ -130,7 +130,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.8 }}
-            className="w-full lg:w-[70%] text-text-light"
+            className="w-full lg:w-[70%] text-text-light "
           >
             An architecture and interiors studio shaping unique, enduring spaces for clients to thrive.
           </motion.p>
@@ -154,7 +154,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="flex flex-col"
               >
-                <h2 className="text-3xl md:text-4xl Rethink font-bold text-prim">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl Rethink font-bold text-prim">
                   <CountUp
                     start={0}
                     end={stat.end}
@@ -163,12 +163,12 @@ const Hero = () => {
                   {stat.suffix}
                 </h2>
 
-                <p className="text-text-light text-sm md:text-base whitespace-nowrap">{stat.label}</p>
+                <p className="text-text-light text-xs sm:text-sm md:text-base lg:text-lg whitespace-nowrap">{stat.label}</p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
-      </motion.div>
+      </motion.div >
     </>
   )
 }
