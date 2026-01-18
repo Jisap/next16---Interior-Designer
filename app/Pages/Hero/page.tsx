@@ -86,7 +86,7 @@ const Hero = () => {
             }
           }}
         />
-        <div className="hero-content w-full lg:w-1/2">
+        <div className="hero-content w-full lg:w-1/2 pb-5">
           <div className="overflow-hidden">
             <motion.h1
               variants={maskVariants}
@@ -115,13 +115,13 @@ const Hero = () => {
 
         <motion.div
           variants={boxRevealVariants}
-          className="relative md:absolute bottom-0 right-0 p-8 md:p-10 flex flex-col rounded-tl-3xl bg-black text-white shadow-2xl mt-auto md:mt-0 self-end -mr-[10%] md:mr-0 w-[calc(100%+8%)] md:w-auto"
+          className="relative md:absolute bottom-0 right-0 p-6 sm:p-6 md:p-10 flex flex-col rounded-tl-3xl bg-black text-white shadow-2xl mt-auto md:mt-0 self-end -mr-[10%] md:mr-0 w-[calc(100%+8%)] md:w-auto"
         >
           <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-4xl md:text-5xl mb-5 font-semibold"
+            className="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 md:mb-5 font-semibold"
           >
             About our studio
           </motion.h1>
@@ -130,13 +130,13 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.8 }}
-            className="w-full lg:w-[70%] text-text-light "
+            className="max-w-[85%] md:w-[85%] lg:w-[70%] text-text-light text-sm sm:text-base"
           >
             An architecture and interiors studio shaping unique, enduring spaces for clients to thrive.
           </motion.p>
 
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-10"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-10"
             initial="hidden"
             animate="visible"
             variants={{
@@ -154,7 +154,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="flex flex-col"
               >
-                <h2 className="text-3xl md:text-4xl lg:text-5xl Rethink font-bold text-prim">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl Rethink font-bold text-prim">
                   <CountUp
                     start={0}
                     end={stat.end}
