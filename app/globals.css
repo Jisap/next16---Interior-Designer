@@ -131,3 +131,13 @@ body {
 .about-content:nth-child(3):after {
   content: "3";
 }
+
+@media(max-width:991px) {
+
+  .about-content:after,
+  .about-wrap:after {
+    display: none;
+  }
+}
+
+@media(max-width:575px) {}

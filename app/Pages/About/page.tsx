@@ -49,7 +49,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-content flex flex-col lg:flex-row gap-10 justify-between items-center w-full mt-20">
+          <div className="about-content flex flex-col-reverse lg:flex-row gap-10 justify-between items-center w-full mt-20">
             <div className="w-full lg:w-1/2 flex">
               <div className="w-full lg:w-[90%]">
                 <h1 className="text-5xl Rethink font-semibold">
