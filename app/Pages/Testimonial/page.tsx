@@ -33,7 +33,7 @@ const TestimonialData = [
 const Testimonial = () => {
   return (
     <>
-      <div className="testimonial px-[8%] lg:px-[16%] py-20 gap-10 flex flex-col-reverse lg:flex-row" id="testimonial">
+      <div className="testimonial px-[5%] sm:px-[8%] lg:px-[12%] xl:px-[16%] py-12 sm:py-16 lg:py-20 gap-8 lg:gap-10 flex flex-col-reverse lg:flex-row" id="testimonial">
         <div className="w-full lg:w-1/2 testimonial-image relative aspect-video">
           <Image
             src={testbg}
@@ -47,24 +47,24 @@ const Testimonial = () => {
           <div>
             <div className="flex flex-col">
               <div className="w-full">
-                <span className="text-lg Rethink font-semibold text-gray-400 uppercase">
+                <span className="text-sm sm:text-base lg:text-lg Rethink font-semibold text-gray-400 uppercase">
                   Our clients say
                 </span>
               </div>
 
-              <div className="w-full mt-4">
-                <h1 className="text-5xl md:text-6xl Rethink font-semibold">
-                  Here's What <span className="text-prim"> warm words our clients </span> Say
+              <div className="w-full mt-3 sm:mt-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl Rethink font-semibold leading-tight">
+                  Here's What <span className="text-prim">warm words our clients </span>Say
                 </h1>
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-5 mt-5">
-              <h1 className="text-7xl">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-start sm:items-center gap-4 sm:gap-5 lg:gap-6 mt-5 sm:mt-6 lg:mt-8">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl shrink-0">
                 4.80
               </h1>
 
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-start sm:items-center shrink-0">
                 <div className="starts-icon flex items-center gap-1 bg-prim text-white px-3 py-1 rounded-full">
                   <i className="bi bi-star-fill text-xs"></i>
                   <i className="bi bi-star-fill text-xs"></i>
@@ -73,18 +73,18 @@ const Testimonial = () => {
                   <i className="bi bi-star-fill text-xs"></i>
                 </div>
 
-                <p className="text-text-light text-xs sm:text-base">
+                <p className="text-text-light text-xs sm:text-sm md:text-base mt-1">
                   2,688 reviews
                 </p>
               </div>
 
-              <p className="w-full lg:w-[50%] font-semibold Rethink">
+              <p className="w-full sm:w-auto sm:flex-1 lg:max-w-[50%] font-semibold Rethink text-sm sm:text-base lg:text-base">
                 From concept to reality, the team turned my vision into a stunning, livable space. I couldn't be happier with this!
               </p>
             </div>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <Swiper
               slidesPerView={1}
               spaceBetween={0}
@@ -98,25 +98,25 @@ const Testimonial = () => {
               {
                 TestimonialData.map((item, index) => (
                   <SwiperSlide key={index}>
-                    <p className="text-2xl text-text-light font-semibold tracking-wide Rethink">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-text-light font-semibold tracking-wide Rethink leading-relaxed">
                       {item.desc}
                     </p>
 
-                    <div className="flex items-center gap-3 mt-8">
+                    <div className="flex items-center gap-3 mt-6 sm:mt-8">
                       <Image
                         src={item.image}
                         alt="testimonials"
                         width={50}
                         height={50}
-                        className="w-[75px] h-[75px] object-cover rounded-full"
+                        className="w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[75px] md:h-[75px] object-cover rounded-full shrink-0"
                       />
 
                       <div className="flex flex-col">
-                        <h3 className="text-2xl font-semibold">
+                        <h3 className="text-xl sm:text-2xl font-semibold">
                           {item.name}
                         </h3>
 
-                        <h3 className="font-semibold text-gray-400">
+                        <h3 className="text-sm sm:text-base font-semibold text-gray-400">
                           {item.role}
                         </h3>
                       </div>
