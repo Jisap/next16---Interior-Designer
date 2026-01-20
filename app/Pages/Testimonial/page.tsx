@@ -2,6 +2,31 @@
 
 import Image from "next/image"
 import testbg from "@/public/Images/testimonials-bg.jpg"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+import test1 from "@/public/Images/testimonials-1.jpg"
+import test2 from "@/public/Images/testimonials-2.jpg"
+
+
+const TestimonialData = [
+  {
+    id: "1",
+    desc: "A wonderfull experience! They knew what they were doing and were incredibly knowledgeable thoroughout the process.",
+    image: test1,
+    name: "Olivia Peterson",
+    role: "Co-founder"
+  },
+  {
+    id: "2",
+    desc: "I absolutely love my the new modern living room! The clean lines, a neutral tones, and minimalist interior create a such a calming & stylish atmosphere. Highly recommed their modern interior design servies!",
+    image: test2,
+    name: "Morgan Dufresne",
+    role: "Company owner",
+  }
+]
 
 
 
@@ -57,6 +82,49 @@ const Testimonial = () => {
                 From concept to reality, the team turned my vision into a stunning, livable space. I couldn't be happier with this!
               </p>
             </div>
+          </div>
+
+          <div className="mt-10">
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={0}
+              loop={true}
+              autoplay={{
+                delay: 2000
+              }}
+              modules={[Autoplay]}
+              speed={1500}
+            >
+              {
+                TestimonialData.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <p className="text-2xl text-text-light font-semibold tracking-wide Rethink">
+                      {item.desc}
+                    </p>
+
+                    <div className="flex items-center gap-3 mt-8">
+                      <Image
+                        src={item.image}
+                        alt="testimonials"
+                        width={50}
+                        height={50}
+                        className="w-[75px] h-[75px] object-cover rounded-full"
+                      />
+
+                      <div className="flex flex-col">
+                        <h3 className="text-2xl font-semibold">
+                          {item.name}
+                        </h3>
+
+                        <h3 className="font-semibold text-gray-400">
+                          {item.role}
+                        </h3>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))
+              }
+            </Swiper>
           </div>
         </div>
       </div>
