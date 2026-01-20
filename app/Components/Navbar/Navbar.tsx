@@ -17,7 +17,7 @@ const navLinks: NavLink[] = [
   { label: "Expertise", href: "/expertise" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Faqs", href: "/faqs" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 
@@ -95,24 +95,30 @@ const Navbar = () => {
       ${isFixed ? "bg-black/90 backdrop-blur-md" : "bg-transparent"}    
     `}>
       <div className={`flex items-center justify-between transition-all duration-500 
-        ${isFixed ? "px-[8%] lg:px-[16%]" : "px-[8%] lg:px-[5%]"}
+        ${isFixed ? "px-[5%] sm:px-[8%] lg:px-[10%] xl:px-[14%] 2xl:px-[16%]" : "px-[5%] sm:px-[8%] lg:px-[5%] xl:px-[5%]"}
         `}
       >
         {/* desktop logo */}
         <Link
           href="/"
-          className={`text-4xl lg:text-5xl font-bold Audiowide text-white relative z-60`}
+          className={`transition-all duration-500 font-bold Audiowide text-white relative z-60
+            ${isFixed ? "text-3xl lg:text-4xl xl:text-5xl" : "text-4xl lg:text-5xl"}
+          `}
         >
           Liv<span className="text-prim-dark">ora</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex space-x-5 menu-link relative z-40">
+        <nav className={`hidden lg:flex menu-link relative z-40 transition-all duration-500
+          ${isFixed ? "gap-3 xl:gap-4 2xl:gap-5" : "gap-4 xl:gap-5"}
+        `}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-lg min-[1025px]:max-[1224px]:text-sm Rethink text-gray-200 hover:text-prim-dark transition-colors"
+              className={`Rethink text-gray-200 hover:text-prim-dark transition-all duration-500
+                ${isFixed ? "text-sm lg:text-base xl:text-lg" : "text-base lg:text-lg"}
+              `}
             >
               {link.label}
             </Link>
@@ -120,21 +126,27 @@ const Navbar = () => {
         </nav>
 
         {/* Right Icons */}
-        <div className="flex items-center gap-5 relative z-60">
-          <Link href="#" className="hidden md:flex gap-2 text-gray-200 group">
+        <div className={`flex items-center relative z-60 transition-all duration-500
+          ${isFixed ? "gap-2 lg:gap-3 xl:gap-4" : "gap-3 lg:gap-5"}
+        `}>
+          <Link href="#" className={`hidden md:flex gap-2 text-gray-200 group transition-all duration-500
+            ${isFixed ? "text-sm xl:text-base" : "text-base"}
+          `}>
             <Image
               src={phoneCall}
               alt="phone"
-              width={24}
-              height={24}
-              className="invert"
+              width={isFixed ? 20 : 24}
+              height={isFixed ? 20 : 24}
+              className="invert transition-all duration-500"
             />
             <span className="Rethink font-semibold group-hover:text-white">
               +1 234 567 890
             </span>
           </Link>
 
-          <Link href="#contact" className="Rethink font-semibold px-4 py-2 bg-white text-black hover:bg-prim-dark hover:text-white rounded-full transition-all duration-300 cursor-pointer">
+          <Link href="#contact" className={`Rethink font-semibold bg-white text-black hover:bg-prim-dark hover:text-white rounded-full transition-all duration-300 cursor-pointer
+            ${isFixed ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base" : "px-4 py-2 text-base"}
+          `}>
             Get in Touch
           </Link>
 
