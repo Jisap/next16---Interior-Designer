@@ -4,6 +4,7 @@ import MarqueeSlider1 from './MarqueeSlider1/page'
 import About from './About/page'
 import Testimonial from './Testimonial/page'
 import { WorkBanner } from './Work-banner/page'
+import Expertise from './Our-Expertise/page'
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <MarqueeSlider1 />
       <About />
       <WorkBanner />
+      <Expertise />
       <Testimonial />
     </>
   )
