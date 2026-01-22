@@ -24,6 +24,17 @@ const faqData = [
 
 
 const Faqs = () => {
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const toggle = (index: number) => {
+    if (openIndex === index) {
+      setOpenIndex(null)
+    } else {
+      setOpenIndex(index)
+    }
+  }
+
   return (
     <>
       <div className='px-[8%] lg:px-[16%] py-20 pb-30' id="faqs">
@@ -39,6 +50,43 @@ const Faqs = () => {
           <p className='mt-8 DmSans text-gray-300'>
             Form is here to shape spaces you love, guiding every project with care, skill, and open client support for lasting design excellence.
           </p>
+        </div>
+
+        <div className="space-y-6 pt-15 w-full">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`
+                overflow-hidden border-b border-gray-500 transition-all duration-300 
+                ${openIndex === index ? "" : ""}
+              `}>
+              <button
+                onClick={() => toggle(index)}
+                className="w-full flex justify-between items-center py-4 text-left focus:outline-none cursor-pointer"
+              >
+                <span className="text-2xl font-bold Rethink text-white">
+                  {item.question}
+                </span>
+
+                {openIndex === index ? (
+                  <i className="bi bi-dash bg-prim rounded-full px-2 py-1 text-black text-3xl transition-all duration-300 ease-in-out"></i>
+                ) : (
+                  <i className="bi bi-plus bg-prim rounded-full px-2 py-1 text-black text-3xl transition-all duration-300 ease-in-out"></i>
+                )}
+              </button>
+
+              <div
+                className={`
+                  transition-all duration-500 ease-in-out overflow-hidden 
+                  ${openIndex === index ? "max-h-75 opacity-100 py-3" : "max-h-0 opacity-0 py-0"}
+                `}
+              >
+                <p className="text-lg font-medium w-[70%] DmSans text-gray-300">
+                  {item.answer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
 
