@@ -48,7 +48,7 @@ const itemVariants = {
 
 const Gallery = () => {
   return (
-    <section className="py-24 bg-body overflow-hidden">
+    <section className="py-24 bg-body overflow-hidden" id="gallery">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -78,8 +78,7 @@ const Gallery = () => {
               key={index}
               variants={itemVariants}
               whileHover="hover"
-              initial="hidden"
-              className={`relative group overflow-hidden rounded-2xl cursor-pointer ${image.className}`}
+              className={`relative group overflow-hidden rounded-2xl cursor-pointer h-[350px] md:h-full ${image.className}`}
             >
               <Image
                 src={image.src}
@@ -89,23 +88,19 @@ const Gallery = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <motion.div
-                variants={{
-                  hidden: { opacity: 0 },
-                  hover: { opacity: 1 }
-                }}
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-black/50 z-10 flex items-center justify-center p-6"
+                className="absolute inset-0 bg-black/60 z-10 flex items-center justify-center p-6"
               >
                 <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    hover: { opacity: 1, y: 0 }
-                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileHover={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="text-center"
                 >
-                  <p className="text-white font-bold text-xl Rethink mb-2">{image.alt}</p>
-                  <span className="text-prim text-sm Audiowide tracking-widest">View Project</span>
+                  <p className="text-white font-bold text-2xl Rethink mb-2">{image.alt}</p>
+                  <span className="text-prim text-sm Audiowide tracking-[0.2em] font-medium">View Project</span>
                 </motion.div>
               </motion.div>
             </motion.div>

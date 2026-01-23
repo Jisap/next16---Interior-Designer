@@ -160,7 +160,7 @@ const Expertise = () => {
     <section
       ref={containerRef}
       className='px-[8%] lg:px-[16%] py-32 relative overflow-hidden'
-      id="Expertise"
+      id="expertise"
     >
       {/* Background decoration elements */}
       <div className="absolute top-0 left-1/4 w-px h-full bg-linear-to-b from-transparent via-white/5 to-transparent pointer-events-none" />

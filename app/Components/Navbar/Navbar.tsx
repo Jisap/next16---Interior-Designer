@@ -12,12 +12,12 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Expertise", href: "/expertise" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Faqs", href: "/faqs" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Faqs", href: "#faqs" },
+  { label: "Contact", href: "#contact" },
 ];
 
 
@@ -25,6 +25,15 @@ const Navbar = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({ behavior: "smooth" });
+    window.history.pushState(null, "", href);
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,6 +125,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => handleScroll(e, link.href)}
               className={`Rethink text-gray-200 hover:text-prim-dark transition-all duration-500
                 ${isFixed ? "text-sm lg:text-base xl:text-lg" : "text-base lg:text-lg"}
               `}
@@ -144,7 +154,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <Link href="#contact" className={`Rethink font-semibold bg-white text-black hover:bg-prim-dark hover:text-white rounded-full transition-all duration-300 cursor-pointer
+          <Link href="#contact" onClick={(e) => handleScroll(e, "#contact")} className={`Rethink font-semibold bg-white text-black hover:bg-prim-dark hover:text-white rounded-full transition-all duration-300 cursor-pointer
             ${isFixed ? "px-3 py-1.5 text-sm lg:px-4 lg:py-2 lg:text-base" : "px-4 py-2 text-base"}
           `}>
             Get in Touch
@@ -183,7 +193,7 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     className="text-4xl font-bold Rethink text-gray-100 hover:text-prim-dark transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => handleScroll(e, link.href)}
                   >
                     <span className="text-prim-dark/50 mr-4 text-2xl font-mono">0{index + 1}</span>
                     {link.label}
