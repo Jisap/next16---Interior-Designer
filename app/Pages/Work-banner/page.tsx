@@ -18,7 +18,7 @@ const partners = [
   { src: partner6, alt: "partner 6" },
 ]
 
-export const WorkBanner = () => {
+const WorkBanner = () => {
   const title = "Transform your vision with Form's expertise"
   const words = title.split(" ")
 
@@ -130,3 +130,5 @@ export const WorkBanner = () => {
     </>
   )
 }
+
+export default WorkBanner
