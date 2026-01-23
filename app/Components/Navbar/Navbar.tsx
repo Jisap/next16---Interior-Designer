@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import phoneCall from "@/public/Images/phone-call.svg"
 import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 
 type NavLink = {
   label: string;
@@ -42,7 +42,7 @@ const Navbar = () => {
   }, []);
 
   // Animación del fondo
-  const menuVariants: any = {
+  const menuVariants: Variants = {
     closed: {
       // El menú está oculto dentro de un círculo de tamaño 0% 
       // en la esquina superior derecha (cerca del botón)
@@ -71,7 +71,7 @@ const Navbar = () => {
   };
 
   // Animación de los enlaces
-  const itemVariants: any = {
+  const itemVariants: Variants = {
     closed: {
       opacity: 0,               // Invisible
       y: 20,                    // Desplazado 20px hacia abajo

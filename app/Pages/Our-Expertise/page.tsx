@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import {
   motion,
   useScroll,
@@ -9,7 +9,6 @@ import {
   useVelocity,
   useSpring,
   useMotionValue,
-  useAnimationFrame
 } from "framer-motion"
 import expertise1 from "@/public/Images/expertise-1.jpg"
 import expertise2 from "@/public/Images/expertise-2.jpg"
@@ -122,7 +121,7 @@ const TiltCard = ({ item, index }: { item: typeof expertiseData[0], index: numbe
         </motion.div>
 
         {/* Overlay effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       <motion.button
@@ -164,8 +163,8 @@ const Expertise = () => {
       id="Expertise"
     >
       {/* Background decoration elements */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-px h-full bg-linear-to-b from-transparent via-white/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-px h-full bg-linear-to-b from-transparent via-white/5 to-transparent pointer-events-none" />
 
       <div className='text-center mb-20 relative z-10'>
         <motion.span

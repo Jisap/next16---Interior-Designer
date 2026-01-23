@@ -1,7 +1,6 @@
 
 
 import { MarqueeItem } from "@/app/Components/MarqueeItem"
-import Image from "next/image"
 
 
 

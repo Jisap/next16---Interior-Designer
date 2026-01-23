@@ -48,7 +48,7 @@ const itemVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0.8,
-      ease: [0.22, 1, 0.36, 1] as any,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   },
 }
@@ -60,7 +60,7 @@ const imageVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 1.2,
-      ease: [0.22, 1, 0.36, 1] as any,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   },
 }
@@ -98,7 +98,7 @@ const Testimonial = () => {
 
             <motion.div variants={itemVariants} className="w-full mt-3 sm:mt-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl Rethink font-semibold leading-tight">
-                Here's What <span className="text-prim relative">
+                Here&apos;s What <span className="text-prim relative">
                   warm words our clients
                   <motion.svg
                     viewBox="0 0 300 10"
@@ -141,7 +141,7 @@ const Testimonial = () => {
             </div>
 
             <p className="w-full sm:w-auto sm:flex-1 lg:max-w-[50%] font-semibold Rethink text-sm sm:text-base lg:text-base leading-relaxed opacity-80 border-l-2 border-prim/20 pl-4">
-              From concept to reality, the team turned my vision into a stunning, livable space. I couldn't be happier with this!
+              From concept to reality, the team turned my vision into a stunning, livable space. I couldn&apos;t be happier with this!
             </p>
           </motion.div>
         </div>
@@ -164,7 +164,7 @@ const Testimonial = () => {
               TestimonialData.map((item, index) => (
                 <SwiperSlide key={index}>
                   <p className="text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-text-light font-semibold tracking-wide Rethink leading-relaxed italic">
-                    "{item.desc}"
+                    &quot;{item.desc}&quot;
                   </p>
 
                   <div className="flex items-center gap-3 mt-6 sm:mt-8">
